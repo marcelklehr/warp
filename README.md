@@ -1,7 +1,7 @@
 # warp
 A [faster-than-light](https://en.wikipedia.org/wiki/Warp_drive) collaborative editor
 
-## demo
+Take a look at the [demo](http://warp.der-analphabet.de/)
 
 ## Install
 ```
