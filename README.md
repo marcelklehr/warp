@@ -1,5 +1,5 @@
 # warp
-An [faster-than-light](https://en.wikipedia.org/wiki/Warp_drive) editor
+A [faster-than-light](https://en.wikipedia.org/wiki/Warp_drive) collaborative editor
 
 ## demo
 
