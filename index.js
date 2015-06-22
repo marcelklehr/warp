@@ -47,6 +47,12 @@ function createEditor(editableDiv) {
     ],
     callback: function onChange(summaries) {
       var ops = domOT.adapters.mutationSummary.import(summaries[0], editableDiv)
+      ops = ops.filter(function(op) {
+        // filter out changes to the root node
+        if(op.path) return !!op.path.length
+        else return true
+      })
+      if(!ops.length) return
       console.log(ops)
       doc.update(ops)
     }
