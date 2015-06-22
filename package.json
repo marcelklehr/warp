@@ -1,0 +1,29 @@
+{
+  "name": "warp",
+  "version": "1.0.0",
+  "description": "Proof of concept dom-ot editor",
+  "main": "server.js",
+  "dependencies": {
+    "ecstatic": "^0.8.0",
+    "gulf": "^0.4.0",
+    "mutation-summary": "^0.0.0",
+    "node-jsdom": "^3.1.5",
+    "shoe": "^0.0.15",
+    "dom-ot": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcelklehr/warp.git"
+  },
+  "author": "Marcel Klehr <mklehr@gmx.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marcelklehr/warp/issues"
+  },
+  "homepage": "https://github.com/marcelklehr/warp#readme"
+}
