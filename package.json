@@ -5,11 +5,11 @@
   "main": "server.js",
   "dependencies": {
     "ecstatic": "^0.8.0",
-    "gulf": "^0.4.0",
+    "gulf": "0.4.x",
     "mutation-summary": "^0.0.0",
     "node-jsdom": "^3.1.5",
     "shoe": "^0.0.15",
-    "dom-ot": "^1.0.1"
+    "dom-ot": "1.x"
   },
   "devDependencies": {},
   "scripts": {
