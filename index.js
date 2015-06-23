@@ -30,7 +30,7 @@ function createEditor(editableDiv) {
     else {
       editableDiv.innerHTML = ''
       for(var i=0; i<newcontent.childNodes.length; i++) {
-        editableDiv.appendChild(newcontent.childNodes[i].cloneNode())
+        editableDiv.appendChild(newcontent.childNodes[i].cloneNode(/*deep:*/true))
       }
     }
     observer.reconnect()
