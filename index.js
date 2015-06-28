@@ -3,11 +3,9 @@ var gulf = require('gulf')
   , MutationSummary = require('mutation-summary')
   , shoe = require('shoe')
 
-$(function() {
-  var doc = createEditor(document.querySelector('#doc'))
-  var stream = shoe('/socket')
-  stream.pipe(doc.masterLink()).pipe(stream)
-})
+var doc = createEditor(document.querySelector('#doc'))
+var stream = shoe('/socket')
+stream.pipe(doc.masterLink()).pipe(stream)
 
 function createEditor(editableDiv) {
   jQuery(editableDiv).hallo({
@@ -25,13 +23,16 @@ function createEditor(editableDiv) {
     observer.disconnect()
     console.log(newcontent)
     if(changes) {
-      domOT.apply(editableDiv, changes)
+      domOT.unpackOps(changes).forEach(function(op) {
+        op.apply(editableDiv, /*index:*/true)
+      })
     }
     else {
       editableDiv.innerHTML = ''
       for(var i=0; i<newcontent.childNodes.length; i++) {
         editableDiv.appendChild(newcontent.childNodes[i].cloneNode(/*deep:*/true))
       }
+      domOT.adapters.mutationSummary.createIndex(editableDiv)
     }
     observer.reconnect()
   }
@@ -55,6 +56,9 @@ function createEditor(editableDiv) {
       if(!ops.length) return
       console.log(ops)
       doc.update(ops)
+      ops.forEach(function(op) {
+        op.apply(editableDiv, /*index:*/true, /*dry:*/true)
+      })
     }
   })
 
