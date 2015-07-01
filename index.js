@@ -23,8 +23,29 @@ function createEditor(editableDiv) {
     observer.disconnect()
     console.log(newcontent)
     if(changes) {
-      domOT.unpackOps(changes).forEach(function(op) {
+      var ops = domOT.unpackOps(changes)
+      var selection = window.getSelection()
+        , ranges = []
+      for(var i=0; i<selection.rangeCount; i++) {
+        var range = selection.getRangeAt(i)
+        ranges.push(domOT.transformCursor(range, ops, editableDiv))
+      }
+      ranges = ranges.map(function(range) {
+        return { startContainer: range.startContainer
+                , startOffset: range.startOffset
+                , endContainer: range.endContainer
+                , endOffset: range.endOffset}
+      })
+      ops.forEach(function(op) {
         op.apply(editableDiv, /*index:*/true)
+      })
+      selection.removeAllRanges()
+      console.log(ranges)
+      ranges.forEach(function(r) {
+        var range = new Range
+        range.setStart(r.startContainer, r.startOffset)
+        range.setEnd(r.endContainer, r.endOffset)
+        selection.addRange(range)
       })
     }
     else {
