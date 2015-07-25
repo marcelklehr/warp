@@ -9,7 +9,7 @@
     "gulf-contenteditable": "0.1.x",
     "node-jsdom": "^3.1.5",
     "shoe": "^0.0.15",
-    "dom-ot": "1.x"
+    "dom-ot": "2.x"
   },
   "devDependencies": {},
   "scripts": {
