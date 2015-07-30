@@ -5,7 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "ecstatic": "^0.8.0",
-    "gulf": "0.4.x",
+    "gulf": "1.x",
     "gulf-contenteditable": "0.1.x",
     "node-jsdom": "^3.1.5",
     "shoe": "^0.0.15",
