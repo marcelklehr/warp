@@ -5,8 +5,8 @@
   "main": "server.js",
   "dependencies": {
     "ecstatic": "^0.8.0",
-    "gulf": "1.x",
-    "gulf-contenteditable": "1.x",
+    "gulf": "4.x",
+    "gulf-contenteditable": "4.x",
     "node-jsdom": "^3.1.5",
     "shoe": "^0.0.15",
     "dom-ot": "2.x"
