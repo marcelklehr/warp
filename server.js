@@ -5,7 +5,7 @@ var gulf = require('gulf')
 
 var ecstatic = require('ecstatic')(__dirname)
 var server = http.createServer(ecstatic);
-server.listen(80);
+server.listen(8080);
 
 var div = domOT.create('<div>Hello world</div>')
 
